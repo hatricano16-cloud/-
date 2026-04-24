@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANAD - مشروع سند</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <nav class="navbar">
+            <div class="logo-text"><span>SANAD</span></div>
+            <ul class="nav-links">
+                <li><a href="#" class="active" onclick="showSection('heroSection')">الرئيسية</a></li>
+                <li><a href="#" onclick="showSection('librarySection')">المكتبة</a></li>
+                <li><a href="#" onclick="showSection('supportSection')">طلب استغاثة</a></li>
+                <li><a href="#" onclick="showSection('aboutSection')">About</a></li>
+            </ul>
+            <button class="btn-login-nav" onclick="showSection('loginSection')">تسجيل الدخول</button>
+        </nav>
+
+        <section class="hero-section" id="heroSection">
+            <h1 class="main-title">أهداف المشروع</h1>
+            <p class="sub-title">Objectives</p>
+            <div class="content-container">
+                <div class="robot-side">
+                    <div class="ai-robot">
+                        <div class="robot-head">
+                            <div class="eyes"><div class="eye left"></div><div class="eye right"></div></div>
+                        </div>
+                        <div class="robot-body"><div class="chest-light"></div></div>
+                        <div class="robot-hands">
+                            <div class="hand l-hand"></div><div class="hand r-hand"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="glass-card"><h3>الدعم السريع</h3><p>توفير الأدوات اللازمة للمستخدمين</p></div>
+                    <div class="glass-card"><h3>تسهيل الوصول</h3><p>للمعلومات والخدمات التقنية</p></div>
+                    <div class="glass-card"><h3>حل المشكلات</h3><p>تجاوز العقبات التقنية والفنية</p></div>
+                    <div class="glass-card"><h3>استشارات مهنية</h3><p>تقديم المشورة للطلاب والمشاريع</p></div>
+                </div>
+            </div>
+            <div class="center-btn">
+                <button class="btn-start" onclick="showSection('dashboardSection')">ابدأ الرحلة <i class="fas fa-paper-plane"></i></button>
+            </div>
+        </section>
+
+        <section class="dashboard-section section-hidden" id="dashboardSection">
+            <h1 class="main-title">لوحة التحكم</h1>
+            <div class="dash-container">
+                <div class="dash-card" onclick="showSection('consultSection')">
+                    <div class="dash-icon"><i class="fas fa-brain"></i></div>
+                    <h3>قسم الاستشارات</h3>
+                </div>
+                <div class="dash-card" onclick="showSection('librarySection')">
+                    <div class="dash-icon"><i class="fas fa-book-reader"></i></div>
+                    <h3>المكتبة التقنية</h3>
+                </div>
+                <div class="dash-card" onclick="showSection('supportSection')">
+                    <div class="dash-icon"><i class="fas fa-satellite-dish"></i></div>
+                    <h3>مركز الدعم</h3>
+                </div>
+            </div>
+            <div class="center-btn">
+                <button class="btn-start btn-back-styled" onclick="showSection('heroSection')">العودة للرئيسية</button>
+            </div>
+        </section>
+
+        <section class="library-section section-hidden" id="librarySection">
+            <h1 class="main-title">المكتبة التقنية الشاملة</h1>
+            <div class="library-grid-wide">
+                <div class="lib-card glass-card">
+                    <i class="fas fa-file-code"></i>
+                    <h3>مكتبة الأكواد</h3>
+                    <p>أكواد (HTML, CSS, JS) جاهزة لمشاريعك مع شرح مفصل لكل كود.</p>
+                    <button class="inv-btn">تصفح الآن</button>
+                </div>
+                <div class="lib-card glass-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>الكورسات التدريبية</h3>
+                    <p>دروس تعليمية وشروحات حصرية من فريق سند لتطوير مهاراتك.</p>
+                    <button class="inv-btn">مشاهدة</button>
+                </div>
+                <div class="lib-card glass-card">
+                    <i class="fas fa-download"></i>
+                    <h3>الكتب والمراجع</h3>
+                    <p>أفضل الكتب التقنية والبرمجية العالمية بصيغة PDF مجاناً.</p>
+                    <button class="inv-btn">تحميل</button>
+                </div>
+                <div class="lib-card glass-card">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>نماذج المشاريع</h3>
+                    <p>استلهم من مشاريع جاهزة ومصممة بأحدث التقنيات العالمية.</p>
+                    <button class="inv-btn">عرض</button>
+                </div>
+            </div>
+            <div class="center-btn">
+                <button class="btn-start btn-back-styled" onclick="showSection('dashboardSection')">عودة للوحة التحكم</button>
+            </div>
+        </section>
+
+        <section class="login-section section-hidden" id="loginSection">
+            <div class="login-container glass-card">
+                <div class="form-toggle">
+                    <button id="toggleLogin" class="active-toggle" onclick="switchForm('login')">تسجيل الدخول</button>
+                    <button id="toggleRegister" onclick="switchForm('register')">إنشاء حساب</button>
+                </div>
+                <form id="loginForm">
+                    <input type="text" placeholder="اسم المستخدم" required>
+                    <input type="password" placeholder="كلمة المرور" required>
+                    <button class="btn-start" style="width:100%">دخول</button>
+                </form>
+                <form id="registerForm" style="display:none">
+                    <input type="text" placeholder="الاسم بالكامل" required>
+                    <input type="email" placeholder="البريد الإلكتروني" required>
+                    <input type="password" placeholder="كلمة المرور" required>
+                    <button class="btn-start" style="width:100%">إنشاء الحساب</button>
+                </form>
+            </div>
+            <div class="center-btn"><button class="btn-start btn-back-styled" onclick="showSection('heroSection')">إلغاء</button></div>
+        </section>
+
+        <section class="support-section section-hidden" id="supportSection">
+            <div class="contact-form glass-card wide-form">
+                <h2>إرسال إشارة استغاثة</h2>
+                <div class="input-group">
+                    <input type="text" placeholder="الاسم الكامل">
+                    <input type="email" placeholder="البريد">
+                </div>
+                <select>
+                    <option>نوع المشكلة</option>
+                    <option>عطل فني</option>
+                    <option>استشارة عاجلة</option>
+                </select>
+                <textarea style="height: 180px;" placeholder="صف مشكلتك بالتفصيل..."></textarea>
+                <button class="btn-start shadow-pulse" style="width:100%">إرسال الآن</button>
+            </div>
+            <div class="center-btn"><button class="btn-start btn-back-styled" onclick="showSection('dashboardSection')">عودة</button></div>
+        </section>
+
+        <section class="about-section section-hidden" id="aboutSection">
+            <div class="glass-card wide-form" style="text-align: center;">
+                <h1 class="main-title">من نحن - SANAD</h1>
+                <p style="margin: 20px 0; color: #ddd; line-height: 1.8;">نحن رفيقك التقني الذكي في رحلة التطوير والبحث.</p>
+                <div class="contact-info-grid">
+                    <div class="info-item"><i class="fas fa-envelope"></i><p>support@sanad.com</p></div>
+                    <div class="info-item"><i class="fas fa-phone"></i><p>+20 123 456 789</p></div>
+                </div>
+            </div>
+            <div class="center-btn"><button class="btn-start btn-back-styled" onclick="showSection('heroSection')">العودة للرئيسية</button></div>
+        </section>
+
+        <section class="consult-section section-hidden" id="consultSection">
+            <div class="ai-console glass-card">
+                <h2>وحدة تحليل الأفكار</h2>
+                <div class="scanner-line"></div>
+                <textarea placeholder="اكتب فكرتك هنا..."></textarea>
+                <button class="btn-start" style="width:100%">بدء الفحص</button>
+            </div>
+            <div class="center-btn"><button class="btn-start btn-back-styled" onclick="showSection('dashboardSection')">عودة</button></div>
+        </section>
+
+        <div class="chat-toggle" onclick="toggleChat()"><i class="fas fa-robot"></i></div>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header"><span>سند AI</span><button onclick="toggleChat()">×</button></div>
+            <div id="chatBody" class="chat-body"><p class="bot-msg">مرحباً! أنا سند، اسألني عن المكتبة أو الاستشارات.</p></div>
+            <div class="chat-footer">
+                <input type="text" id="chatInput" placeholder="اسأل سند...">
+                <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('section').forEach(s => s.classList.add('section-hidden'));
+            document.getElementById(id).classList.remove('section-hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        function switchForm(type) {
+            document.getElementById('loginForm').style.display = (type === 'login') ? 'block' : 'none';
+            document.getElementById('registerForm').style.display = (type === 'register') ? 'block' : 'none';
+            document.getElementById('toggleLogin').className = (type === 'login') ? 'active-toggle' : '';
+            document.getElementById('toggleRegister').className = (type === 'register') ? 'active-toggle' : '';
+        }
+        function toggleChat() {
+            const win = document.getElementById('chatWindow');
+            win.style.display = (win.style.display === 'flex') ? 'none' : 'flex';
+        }
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const body = document.getElementById('chatBody');
+            if(!input.value) return;
+            body.innerHTML += `<p class="user-msg">${input.value}</p>`;
+            let reply = "أنا هنا للمساعدة، يمكنك زيارة قسم المكتبة لمزيد من المعلومات.";
+            let val = input.value;
+            if(val.includes("سلام")) reply = "وعليكم السلام! كيف يمكن لسند مساعدتك؟";
+            if(val.includes("مكتبه") || val.includes("المكتبة")) reply = "المكتبة تحتوي على ملفات وأكواد رائعة، تصفحها الآن!";
+            setTimeout(() => {
+                body.innerHTML += `<p class="bot-msg">${reply}</p>`;
+                body.scrollTop = body.scrollHeight;
+            }, 600);
+            input.value = "";
+        }
+    </script>
+</body>
+</html>
